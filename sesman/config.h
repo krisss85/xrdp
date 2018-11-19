@@ -60,6 +60,7 @@
 #define SESMAN_CFG_SEC_USR_GROUP     "TerminalServerUsers"
 #define SESMAN_CFG_SEC_ADM_GROUP     "TerminalServerAdmins"
 #define SESMAN_CFG_SEC_ALWAYSGROUPCHECK "AlwaysGroupCheck"
+#define SESMAN_CFG_RESTRICT_CLIPBOARD "RestrictOutboundClipboard"
 
 #define SESMAN_CFG_SESSIONS          "Sessions"
 #define SESMAN_CFG_SESS_MAX          "MaxSessions"
