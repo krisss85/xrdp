@@ -230,7 +230,7 @@ static char g_bmp_image_header[] =
 
 extern int g_cliprdr_chan_id;   /* in chansrv.c */
 
-struct config_sesman g_cfg      /* config.h */
+struct config_sesman g_cfg;      /* config.h */
 
 extern Display *g_display;      /* in xcommon.c */
 extern int g_x_socket;          /* in xcommon.c */
