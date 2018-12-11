@@ -386,7 +386,7 @@ clipboard_init(void)
          g_printf("clipboard: error reading config. quitting.\n");
          return 1;
      }
-     log_message(loglevel, "clipboard_init: outbound clipboard restricted %s", g_cfg.sec.restrict_oubound_clipboard);
+     log_error("clipboard_init: outbound clipboard restricted" + g_cfg.sec.restrict_oubound_clipboard);
      log_debug("clipboard_init: outbound clipboard restricted -> " + g_cfg.sec.restrict_oubound_clipboard)
      //one-way clipboard
      g_outbound_clipboard_restricted = g_cfg.sec.restrict_oubound_clipboard;
