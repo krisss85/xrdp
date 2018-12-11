@@ -2509,18 +2509,18 @@ clipboard_xevent(void *xevent)
 
     lxevent = (XEvent *)xevent;
 
-    log_error("Test SelectionNotify")
+    log_error("Test SelectionNotify %i", g_outbound_clipboard_restricted)
 
     switch (lxevent->type)
     {
         case SelectionNotify:
-            if (g_outbound_clipboard_restricted == 0) {
-                 log_debug("clipboard_xevent: clipboard SelectionNotify event on xorg.")
+            if (g_outbound_clipboard_restricted == 1) 
+            {
+                 log_debug("clipboard_xevent: clipboard restricted")    
+            } else 
+            {
                  clipboard_event_selection_notify(lxevent);
-             } else {
-                 log_debug("clipboard_xevent: clipboard restricted, ignoring xorg event.")
-                 return 1;
-             }
+            }
             break;
         case SelectionRequest:
             clipboard_event_selection_request(lxevent);

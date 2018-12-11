@@ -505,7 +505,7 @@ config_dump(struct config_sesman *config)
     g_writeln("    AllowRootLogin:           %d", sc->allow_root);
     g_writeln("    MaxLoginRetry:            %d", sc->login_retry);
     g_writeln("    AlwaysGroupCheck:         %d", sc->ts_always_group_check);
-    g_printf("\tRestrictOutboundClipboard: %i\r\n", sc->restrict_oubound_clipboard);
+    g_writeln("    RestrictOutboundClipboard: %i\r\n", sc->restrict_oubound_clipboard);
 
     g_printf( "    TSUsersGroup:             ");
     if (sc->ts_users_enable)
