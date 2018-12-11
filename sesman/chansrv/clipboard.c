@@ -389,7 +389,7 @@ clipboard_init(void)
 
      //one-way clipboard
      log_error("clipboard: set restriction");
-     g_outbound_clipboard_restricted = g_cfg.sec.restrict_oubound_clipboard;
+     g_outbound_clipboard_restricted = 1 //g_cfg.sec.restrict_oubound_clipboard;
 
 
     xfuse_init();
