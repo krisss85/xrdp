@@ -387,7 +387,6 @@ clipboard_init(void)
          return 1;
      }
      log_error("clipboard_init: outbound clipboard restricted" + g_cfg.sec.restrict_oubound_clipboard);
-     log_debug("clipboard_init: outbound clipboard restricted -> " + g_cfg.sec.restrict_oubound_clipboard)
      //one-way clipboard
      g_outbound_clipboard_restricted = g_cfg.sec.restrict_oubound_clipboard;
 
@@ -2512,7 +2511,7 @@ clipboard_xevent(void *xevent)
     switch (lxevent->type)
     {
         case SelectionNotify:
-            log_error("test debug %d",g_outbound_clipboard_restricted)
+            log_error("Test SelectionNotify")
             if (g_outbound_clipboard_restricted == 0) {
                  log_debug("clipboard_xevent: clipboard SelectionNotify event on xorg.")
                  clipboard_event_selection_notify(lxevent);
