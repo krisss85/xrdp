@@ -383,11 +383,12 @@ clipboard_init(void)
 
     if (0 != config_read(&g_cfg))
      {
-         g_printf("clipboard: error reading config. quitting.\n");
+         log_error("clipboard: error reading config. quitting.\n");
          return 1;
      }
-     log_error("clipboard_init: outbound clipboard restricted" + g_cfg.sec.restrict_oubound_clipboard);
+
      //one-way clipboard
+     log_error("clipboard: set restriction");
      g_outbound_clipboard_restricted = g_cfg.sec.restrict_oubound_clipboard;
 
 
@@ -2508,10 +2509,11 @@ clipboard_xevent(void *xevent)
 
     lxevent = (XEvent *)xevent;
 
+    log_error("Test SelectionNotify")
+
     switch (lxevent->type)
     {
         case SelectionNotify:
-            log_error("Test SelectionNotify")
             if (g_outbound_clipboard_restricted == 0) {
                  log_debug("clipboard_xevent: clipboard SelectionNotify event on xorg.")
                  clipboard_event_selection_notify(lxevent);
