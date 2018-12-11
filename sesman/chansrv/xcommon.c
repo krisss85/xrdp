@@ -186,7 +186,9 @@ xcommon_check_wait_objs(void)
     {
         g_memset(&xevent, 0, sizeof(xevent));
         XNextEvent(g_display, &xevent);
-        clip_rv = clipboard_xevent(&xevent);
+        LOG(10, ("EVENT type: type %d",
+                     xevent.type));
+        clip_rv = clipboard_xevent(&xevent);     
         rail_rv = rail_xevent(&xevent);
         if ((clip_rv == 1) && (rail_rv == 1))
         {
